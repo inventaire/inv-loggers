@@ -14,5 +14,9 @@
     "partials"
   ],
   "author": "maxlath",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lodash.assign": "^3.2.0",
+    "lodash.partialright": "^3.1.1"
+  }
 }
