@@ -20,9 +20,7 @@ module.exports = ->
 
   logs_ =
     log: log
-    error: (obj, label, parse=true)->
-      obj = obj?.stack or obj  if parse
-      log obj, label, 'red'
+    error: (obj, label)-> log obj, label, 'red'
     success: (obj, label)-> log obj, label, 'green'
     info: (obj, label)-> log obj, label, 'blue'
     warn: (obj, label)-> log obj, label, 'yellow'
