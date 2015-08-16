@@ -20,7 +20,9 @@ module.exports = ->
 
   logs_ =
     log: log
-    error: (obj, label)-> log obj, label, 'red'
+    error: (err, label)->
+      log (err.stack or err), label, 'red'
+      return
     success: (obj, label)-> log obj, label, 'green'
     info: (obj, label)-> log obj, label, 'blue'
     warn: (obj, label)-> log obj, label, 'yellow'
