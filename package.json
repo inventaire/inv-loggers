@@ -4,7 +4,7 @@
   "description": "loggers and partial loggers",
   "main": "inv-loggers.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers coffee:coffee-script/register"
   },
   "keywords": [
     "log",
@@ -18,5 +18,9 @@
   "dependencies": {
     "lodash.assign": "^3.2.0",
     "lodash.partialright": "^3.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "should": "^7.0.4"
   }
 }
