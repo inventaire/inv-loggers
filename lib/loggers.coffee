@@ -27,6 +27,10 @@ module.exports = ->
     info: (obj, label)-> log obj, label, 'blue'
     warn: (obj, label)-> log obj, label, 'yellow'
 
+  logs_.errorRethrow = (err, label)->
+    logs_.error err, label
+    throw err
+
   partialLogger = (logger)-> (label)-> _.partialRight logger, label
 
   partialLoggers =
@@ -35,5 +39,6 @@ module.exports = ->
     Warn: partialLogger logs_.warn
     Info: partialLogger logs_.info
     Success: partialLogger logs_.success
+    ErrorRethrow: partialLogger logs_.errorRethrow
 
   return _.extend logs_, partialLoggers

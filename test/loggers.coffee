@@ -26,3 +26,17 @@ describe 'loggers', ->
       logger(['wat']).should.be.a.Array
       logger({hello: 'wat'}).should.be.an.Object
       done()
+
+  describe 'errorRethrow', ->
+    it "should rethrow an error", (done)->
+      _.errorRethrow.should.be.a.Function
+      err = new Error('yo')
+      (->_.errorRethrow(err)).should.throw(err)
+      done()
+    it "should rethrow an error in its partial form too", (done)->
+      _.ErrorRethrow.should.be.a.Function
+      fn = _.ErrorRethrow('hello')
+      fn.should.be.a.Function
+      err = new Error('yo')
+      (-> fn(err)).should.throw(err)
+      done()
