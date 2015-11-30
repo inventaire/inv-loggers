@@ -1,6 +1,7 @@
 _ = require '../inv-loggers'
 
 should = require 'should'
+expect = require('chai').expect
 
 describe 'loggers', ->
   describe 'log', ->
@@ -39,4 +40,15 @@ describe 'loggers', ->
       fn.should.be.a.Function
       err = new Error('yo')
       (-> fn(err)).should.throw(err)
+      done()
+
+  describe 'warn', ->
+    it "should return undefined", (done)->
+      expect(_.warn({what: 'blop'}, 'whatever')).to.be.undefined
+      expect(_.warn({what: 'blop'})).to.be.undefined
+      expect(_.warn('blob', 'whatever')).to.be.undefined
+      expect(_.warn(['blob'], 'whatever')).to.be.undefined
+      expect(_.Warn(['blob'])('whatever')).to.be.undefined
+      expect(_.warn('blob')).to.be.undefined
+      expect(_.Warn('blob')('hello')).to.be.undefined
       done()

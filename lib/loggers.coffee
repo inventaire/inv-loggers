@@ -25,7 +25,9 @@ module.exports = ->
       return
     success: (obj, label)-> log obj, label, 'green'
     info: (obj, label)-> log obj, label, 'blue'
-    warn: (obj, label)-> log obj, label, 'yellow'
+    warn: (obj, label)->
+      log obj, label, 'yellow'
+      return
 
   logs_.errorRethrow = (err, label)->
     logs_.error err, label
