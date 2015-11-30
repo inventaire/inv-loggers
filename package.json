@@ -4,7 +4,8 @@
   "description": "loggers and partial loggers",
   "main": "inv-loggers.coffee",
   "scripts": {
-    "test": "mocha --compilers coffee:coffee-script/register"
+    "test": "mocha --compilers coffee:coffee-script/register",
+    "prepublish": "npm test"
   },
   "keywords": [
     "log",
