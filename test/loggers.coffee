@@ -1,4 +1,4 @@
-_ = require '../inv-loggers'
+_ = require '../src/inv-loggers'
 
 should = require 'should'
 expect = require('chai').expect

@@ -2,7 +2,7 @@
   "name": "inv-loggers",
   "version": "3.1.0",
   "description": "loggers and partial loggers",
-  "main": "inv-loggers.coffee",
+  "main": "./build/inv-loggers.js",
   "scripts": {
     "test": "mocha --compilers coffee:coffee-script/register",
     "build": "coffee -o build -c src",
