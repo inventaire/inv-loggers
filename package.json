@@ -5,7 +5,8 @@
   "main": "inv-loggers.coffee",
   "scripts": {
     "test": "mocha --compilers coffee:coffee-script/register",
-    "prepublish": "npm test"
+    "build": "coffee -o build -c src",
+    "prepublish": "npm build && npm test"
   },
   "keywords": [
     "log",
