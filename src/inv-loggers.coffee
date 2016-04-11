@@ -1,7 +1,7 @@
 require 'colors'
 
 log = (obj, label, color = 'cyan')->
-  if typeof obj is 'string' and !label?
+  if typeof obj is 'string' and not label?
     console.log obj[color]
     return obj
 
