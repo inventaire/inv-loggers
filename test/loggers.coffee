@@ -12,6 +12,10 @@ describe 'loggers', ->
       _.log('blob').should.be.an.String()
       done()
 
+    it "should convert an arguments object to an array", (done)->
+      _.log(arguments, 'args').should.be.an.Array()
+      done()
+
   describe 'BindingLoggers', ->
     it "should return a function", (done)->
       _.Log('whatever').should.be.a.Function()

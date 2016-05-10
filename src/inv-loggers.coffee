@@ -6,6 +6,8 @@ log = (obj, label, color = 'cyan')->
     return obj
 
   else
+    # converting arguments object to array bor readablilty
+    if isArguments obj then obj = toArray obj
     if label?
       console.log "****** ".grey + label.toString()[color] + " ******".grey
     else
@@ -13,6 +15,9 @@ log = (obj, label, color = 'cyan')->
     console.log obj
     console.log "-----".grey
     return obj
+
+isArguments = (obj)-> obj.toString() is '[object Arguments]'
+toArray = (obj)-> [].slice.call obj
 
 logs_ =
   log: log
