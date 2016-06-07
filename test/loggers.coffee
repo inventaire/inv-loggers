@@ -16,6 +16,10 @@ describe 'loggers', ->
       _.log(arguments, 'args').should.be.an.Array()
       done()
 
+    it "should not throw when passed a null object", (done)->
+      (-> _.log(null, "it's a trap!")).should.not.throw()
+      done()
+
   describe 'BindingLoggers', ->
     it "should return a function", (done)->
       _.Log('whatever').should.be.a.Function()

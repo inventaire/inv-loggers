@@ -19,7 +19,7 @@ log = (obj, label, color = 'cyan')->
     console.log "-----".grey
     return obj
 
-isArguments = (obj)-> obj.toString() is '[object Arguments]'
+isArguments = (obj)-> obj?.toString() is '[object Arguments]'
 toArray = (obj)-> [].slice.call obj
 
 logs_ =
