@@ -26,6 +26,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/inventaire/inv-loggers"
+    "url": "git+https://github.com/inventaire/inv-loggers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/inventaire/inv-loggers/issues"
+  },
+  "homepage": "https://github.com/inventaire/inv-loggers#readme",
+  "directories": {
+    "test": "test"
   }
 }
