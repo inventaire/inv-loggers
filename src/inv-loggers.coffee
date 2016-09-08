@@ -1,22 +1,19 @@
-# Force the use of colors even if process.stdout.isTTY is false
-# which may happen with supervisor or daemon process
-# cf http://stackoverflow.com/questions/30974445/node-js-winston-logger-no-colors-with-nohup/30976363#30976363
-require('colors').enabled = true
+chalk = require 'chalk'
 
 log = (obj, label, color = 'cyan')->
   if typeof obj is 'string' and not label?
-    console.log obj[color]
+    console.log chalk[color](obj)
     return obj
 
   else
     # converting arguments object to array bor readablilty
     if isArguments obj then obj = toArray obj
     if label?
-      console.log "****** ".grey + label.toString()[color] + " ******".grey
+      console.log chalk.grey("****** ") + chalk[color](label.toString()) + chalk.grey(" ******")
     else
-      console.log "******************************"[color]
+      console.log chalk[color]("******************************")
     console.log obj
-    console.log "-----".grey
+    console.log chalk.grey("-----")
     return obj
 
 isArguments = (obj)-> obj?.toString() is '[object Arguments]'
