@@ -9,11 +9,11 @@ log = (obj, label, color = 'cyan')->
     # converting arguments object to array bor readablilty
     if isArguments obj then obj = toArray obj
     if label?
-      console.log chalk.grey("****** ") + chalk[color](label.toString()) + chalk.grey(" ******")
+      console.log chalk.grey('****** ') + chalk[color](label.toString()) + chalk.grey(' ******')
     else
-      console.log chalk[color]("******************************")
+      console.log chalk[color]('******************************')
     console.log obj
-    console.log chalk.grey("-----")
+    console.log chalk.grey('-----')
     return obj
 
 isArguments = (obj)-> obj?.toString() is '[object Arguments]'
