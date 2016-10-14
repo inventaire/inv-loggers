@@ -34,7 +34,8 @@ logs_.errorRethrow = (err, label)->
   logs_.error err, label
   throw err
 
-partialLogger = (logger)-> (label)-> (obj)-> logger obj, label
+# Exposing partialLogger to ease the creation of other loggers
+logs_.partialLogger = partialLogger = (logger)-> (label)-> (obj)-> logger obj, label
 
 logs_.Log = partialLogger logs_.log
 logs_.Error = partialLogger logs_.error
