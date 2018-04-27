@@ -1,4 +1,5 @@
 chalk = require 'chalk'
+{ inspect } = require 'util'
 
 log = (obj, label, color = 'cyan')->
   if typeof obj is 'string' and not label?
@@ -12,7 +13,11 @@ log = (obj, label, color = 'cyan')->
       console.log chalk.grey('****** ') + chalk[color](label.toString()) + chalk.grey(' ******')
     else
       console.log chalk[color]('******************************')
+    if obj?
+      { context } = obj
+      delete obj.context
     console.log obj
+    if context? then console.log 'Context: ', inspect(context, { depth: null })
     console.log chalk.grey('-----')
     return obj
 
