@@ -1,6 +1,6 @@
 {
   "name": "inv-loggers",
-  "version": "3.3.1",
+  "version": "3.3.2",
   "description": "loggers and partial loggers",
   "main": "./build/inv-loggers.js",
   "scripts": {
