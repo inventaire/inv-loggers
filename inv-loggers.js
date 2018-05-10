@@ -7,7 +7,7 @@ const log = function (obj, label, color = 'cyan') {
     console.log(chalk[color](obj))
     return obj
   } else {
-    // converting arguments object to array bor readablilty
+    // converting arguments object to array for readablilty
     if (isArguments(obj)) obj = toArray(obj)
     if (label != null) {
       console.log(grey('****** ') + chalk[color](label.toString()) + grey(' ******'))
