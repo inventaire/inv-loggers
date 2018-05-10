@@ -16,6 +16,12 @@ describe 'loggers', ->
       _.log(arguments, 'args').should.be.an.Array()
       done()
 
+    it "should not modify the passed object", (done)->
+      obj = { a: 1, b: 2, context: 3 }
+      _.log obj, 'obj'
+      obj.should.deepEqual { a: 1, b: 2, context: 3 }
+      done()
+
     it "should not throw when passed a null object", (done)->
       (-> _.log(null, "it's a trap!")).should.not.throw()
       done()
