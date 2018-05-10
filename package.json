@@ -2,11 +2,11 @@
   "name": "inv-loggers",
   "version": "3.3.6",
   "description": "loggers and partial loggers",
-  "main": "./build/inv-loggers.js",
+  "main": "inv-loggers.js",
   "scripts": {
-    "test": "mocha --compilers coffee:coffee-script/register",
-    "build": "coffee -o build -c src",
-    "prepublish": "npm build && npm test"
+    "test": "mocha",
+    "lint": "standard",
+    "prepublish": "npm run lint && npm test"
   },
   "keywords": [
     "log",
@@ -22,7 +22,8 @@
   },
   "devDependencies": {
     "mocha": "^2.5.3",
-    "should": "^9.0.0"
+    "should": "^9.0.0",
+    "standard": "^11.0.1"
   },
   "repository": {
     "type": "git",
@@ -34,5 +35,14 @@
   "homepage": "https://github.com/inventaire/inv-loggers#readme",
   "directories": {
     "test": "test"
+  },
+  "standard": {
+    "ignore": [
+      "dist"
+    ],
+    "globals": [
+      "it",
+      "describe"
+    ]
   }
 }
