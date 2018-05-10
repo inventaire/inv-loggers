@@ -13,7 +13,8 @@ log = (obj, label, color = 'cyan')->
       console.log chalk.grey('****** ') + chalk[color](label.toString()) + chalk.grey(' ******')
     else
       console.log chalk[color]('******************************')
-    if obj? and typeof obj is 'object'
+    objCopy = obj
+    if obj?.context?
       { context } = obj
       objCopy = Object.assign {}, obj
       delete objCopy.context
