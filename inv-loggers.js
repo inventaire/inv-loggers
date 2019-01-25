@@ -30,7 +30,7 @@ const log = function (obj, label, color = 'cyan') {
   }
 }
 
-const isArguments = obj => obj && obj.toString() === '[object Arguments]'
+const isArguments = obj => obj && obj.toString && obj.toString() === '[object Arguments]'
 const toArray = obj => [].slice.call(obj)
 
 const logs_ = {
