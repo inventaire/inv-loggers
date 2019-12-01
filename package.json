@@ -5,8 +5,7 @@
   "main": "inv-loggers.js",
   "scripts": {
     "test": "mocha",
-    "lint": "standard",
-    "prepublish": "npm run lint && npm test"
+    "prepublish": "npm test"
   },
   "keywords": [
     "log",
@@ -21,9 +20,8 @@
     "tiny-chalk": "^2.0.0"
   },
   "devDependencies": {
-    "mocha": "^2.5.3",
-    "should": "^9.0.0",
-    "standard": "^11.0.1"
+    "mocha": "^6.2.2",
+    "should": "^13.2.3"
   },
   "repository": {
     "type": "git",
@@ -35,14 +33,5 @@
   "homepage": "https://github.com/inventaire/inv-loggers#readme",
   "directories": {
     "test": "test"
-  },
-  "standard": {
-    "ignore": [
-      "dist"
-    ],
-    "globals": [
-      "it",
-      "describe"
-    ]
   }
 }
