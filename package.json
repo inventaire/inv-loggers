@@ -1,13 +1,15 @@
 {
   "name": "inv-loggers",
-  "version": "3.3.9",
+  "version": "3.3.10",
   "description": "loggers and partial loggers",
   "main": "inv-loggers.js",
   "scripts": {
     "test": "mocha",
     "prepublish": "npm test"
   },
-  "files": [ "inv-loggers.js" ],
+  "files": [
+    "inv-loggers.js"
+  ],
   "keywords": [
     "log",
     "warn",
