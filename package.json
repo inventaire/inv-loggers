@@ -7,6 +7,7 @@
     "test": "mocha",
     "prepublish": "npm test"
   },
+  "files": [ "inv-loggers.js" ],
   "keywords": [
     "log",
     "warn",
