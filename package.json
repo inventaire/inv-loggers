@@ -5,7 +5,8 @@
   "main": "inv-loggers.js",
   "scripts": {
     "test": "mocha",
-    "prepublish": "npm test"
+    "prepublish": "npm test",
+    "postpublish": "git push --tags"
   },
   "files": [
     "inv-loggers.js"
