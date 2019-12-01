@@ -2,7 +2,7 @@ const chalk = require('tiny-chalk')
 const { grey } = chalk
 const { inspect } = require('util')
 
-const log = function (obj, label, color = 'cyan') {
+const log = (obj, label, color = 'cyan') => {
   if ((typeof obj === 'string') && (label == null)) {
     console.log(chalk[color](obj))
     return obj
