@@ -1,4 +1,4 @@
-const chalk = require('chalk')
+const chalk = require('tiny-chalk')
 const { grey } = chalk
 const { inspect } = require('util')
 
