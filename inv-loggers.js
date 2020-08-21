@@ -22,7 +22,8 @@ const log = (obj, label, color = 'cyan') => {
       objCopy = Object.assign({}, obj)
       delete objCopy.context
     }
-    print(objCopy)
+    if (typeof objCopy === 'object') console.log(objCopy)
+    else print(objCopy)
     if (context != null) {
       print('Context: ', inspect(context, { depth: 10 }))
     }
