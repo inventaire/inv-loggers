@@ -1,18 +1,19 @@
 const chalk = require('tiny-chalk')
 const { grey } = chalk
 const { inspect } = require('util')
+const print = str => process.stdout.write(str + '\n')
 
 const log = (obj, label, color = 'cyan') => {
   if ((typeof obj === 'string') && (label == null)) {
-    console.log(chalk[color](obj))
+    print(chalk[color](obj))
     return obj
   } else {
     // converting arguments object to array for readablilty
     if (isArguments(obj)) obj = toArray(obj)
     if (label != null) {
-      console.log(grey('****** ') + chalk[color](label.toString()) + grey(' ******'))
+      print(grey('****** ') + chalk[color](label.toString()) + grey(' ******'))
     } else {
-      console.log(chalk[color]('******************************'))
+      print(chalk[color]('******************************'))
     }
     let objCopy = obj
     let context
@@ -21,11 +22,11 @@ const log = (obj, label, color = 'cyan') => {
       objCopy = Object.assign({}, obj)
       delete objCopy.context
     }
-    console.log(objCopy)
+    print(objCopy)
     if (context != null) {
-      console.log('Context: ', inspect(context, { depth: 10 }))
+      print('Context: ', inspect(context, { depth: 10 }))
     }
-    console.log(grey('-----'))
+    print(grey('-----'))
     return obj
   }
 }
