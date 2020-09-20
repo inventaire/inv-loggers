@@ -1,6 +1,5 @@
 const chalk = require('tiny-chalk')
 const { grey } = chalk
-const { inspect } = require('util')
 const print = str => process.stdout.write(str + '\n')
 
 const log = (obj, label, color = 'cyan') => {
@@ -25,7 +24,7 @@ const log = (obj, label, color = 'cyan') => {
     if (typeof objCopy === 'object') console.log(objCopy)
     else print(objCopy)
     if (context != null) {
-      print('Context: ', inspect(context, { depth: 10 }))
+      console.log('Context:', context)
     }
     print(grey('-----'))
     return obj
