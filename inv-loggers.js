@@ -40,7 +40,7 @@ const logs_ = {
   info: (obj, label) => log(obj, label, 'blue'),
   // warn and error do not return the result
   warn: (obj, label) => { log(obj, label, 'yellow') },
-  error: (err, label) => { log((err.stack || err), label, 'red') },
+  error: (err, label) => { log(err, label, 'red') },
   errorRethrow: (err, label) => {
     logs_.error(err, label)
     throw err
